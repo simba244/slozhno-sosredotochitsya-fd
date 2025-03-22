@@ -3,3 +3,96 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
+
+
+/* Mobile-first стили */
+.header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  margin: 0;
+  padding: 40px;
+  font-size: 18px;
+  background-color: #ffffff;
+
+}
+
+/* Логотип */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  gap: 10px;
+  list-style: none; /* Убираем стандартные маркеры списка */
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.header__theme-menu-item {
+
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid red; /* Красная обводка */
+  border-radius: 5px;
+}
+
+.header__dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 0, 0, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+.header__text {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace; /* Подключенный шрифт */
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'IBM Plex Mono', monospace; /* Шрифт для кнопок */
+}
+
+/* Секция "no focus" */
+.no-focus-section {
+  display: grid;
+  grid-template-columns: 1fr; /* Одна колонка */
+  gap: 10px; /* Расстояние между заголовком и подписью */
+  padding: 20px 10px;
+  text-align: center; /* Центрируем текст */
+}
+
+.cover__accent-title {
+  font-family: 'IBM Plex Mono', monospace; /* Шрифт для кнопок */
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.cover__title {
+  font-family: 'IBM Plex Mono', monospace; /* Шрифт для кнопок */
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
