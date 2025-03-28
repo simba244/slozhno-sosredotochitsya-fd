@@ -2,8 +2,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-
-
   background-color: var(--color-background); 
   background-image: url('../images/cover-image-dark.png');
   background-repeat: no-repeat;
@@ -34,8 +32,7 @@
 .header__logo::before {
   content: 'REC';
   font-size: var(--font-main-size);
-  right: 2px; /* Отступ от правого края */
-  top: 2px; /* Отступ от верхнего края */
+
   color: var(--color-pink);
 }
 
@@ -79,13 +76,13 @@
   font-weight: bold;
   color: var(--color-pink);
   margin: 0;
-  line-height: 1.1; /* Можно подобрать оптимальное значение */
+  line-height: var(--main-line-height); /* Можно подобрать оптимальное значение */
 }
 
 
 .header__text {
   display: inline-block;
-  width: 100%;
+  width: 50%;
   font-size: var(--font-main-size);
   font-family: var(--font-family)/* Подключенный шрифт */;
   color: var(--color-pink); /* Цвет текста */
