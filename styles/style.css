@@ -9,6 +9,8 @@
   background-position: center;
   background-attachment: fixed;
   margin: 0;
+  font-family: var(--font-family);
+
 }
 
 
@@ -17,10 +19,9 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  justify-items: end;
+  justify-items: start;
   align-items: center;  
   height: 100vh; 
-
 }
 
 .header__logo {
@@ -31,9 +32,8 @@
 
 .header__logo::before {
   content: 'REC';
-  font-size: var(--font-main-size-mo);
-
-  color: var(--color-pink);
+  font-size: var(--font-main-size);
+  color: var(--color-accent-pink);
 }
 
 .header__logo::after {
@@ -41,14 +41,27 @@
   display: block;
   width: 9px;
   height: 9px;
-  background-color: var(--color-pink);
+  background-color: var(--color-accent-pink);
   border-radius: 50%;
   position: absolute;
   inset-block-start: 8px;
   inset-inline-end: -19px;
-  box-shadow: 0 0 4px 3px var(--color-pink)
+  box-shadow: 0 0 4px 3px var(--color-accent-pink);
 }
 
+
+.header__theme-menu {
+  display: grid;
+  width: 100%;
+  justify-content: end; /* Центрирование по горизонтали */
+
+  @media (width >= 1024px) {
+  height: 100%;
+  justify-content: center;
+  align-items: start;
+  }
+
+}
 
 .header__theme-menu-list {
   display: grid;
@@ -56,38 +69,39 @@
   justify-items: end;
   gap: 10px;
   list-style: none; 
-
   padding: 0;
   margin: 0;
   padding-inline-end: 10px;
+
+  @media (width >= 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
 .header__theme-menu-item {
   background-color: transparent;
   border: var(--border); 
-
+  
 }
 
 .header__title {
-  display: inline-block;
-  width: 100%;
   font-family: var(--font-family);
-  font-size: var(--font-text-size);
+  font-size: var(--font-text-size-mobile);
   font-weight: bold;
-  color: var(--color-pink);
+  color: var(--color-accent-pink);
   margin: 0;
-  line-height: var(--main-line-height); /* Можно подобрать оптимальное значение */
+  line-height: 83%;
+
 }
 
 
 .header__text {
   display: inline-block;
-  width: 50%;
+  width: 100%;
   font-size: var(--font-main-size);
   font-family: var(--font-family)/* Подключенный шрифт */;
-  color: var(--color-pink); /* Цвет текста */
-  text-transform: uppercase;
-  margin: 0;
+  color: var(--color-accent-pink); /* Цвет текста */
 }
 
 
@@ -95,7 +109,7 @@
   background-color: transparent;
   border: none;
   padding: 5px 10px;
-  color: var(--color-pink); /* Цвет текста */
+  color: var(--color-accent-pink); /* Цвет текста */
   cursor: pointer;
   font-size: var(--font-main-size);
   font-family: var(--font-family);
@@ -113,8 +127,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--color-pink);
-  border-block-start: 1px solid var(--color-pink);
+  border-inline-end: 1px solid var(--color-accent-pink);
+  border-block-start: 1px solid var(--color-accent-pink);
   inset-inline-end: var(--main-gap);
   inset-block-start: var(--main-gap);
 }
@@ -124,11 +138,96 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-start: 1px solid var(--color-pink);
-  border-block-end: 1px solid var(--color-pink);
+  border-inline-start: 1px solid var(--color-accent-pink);
+  border-block-end: 1px solid var(--color-accent-pink);
   inset-inline-start: var(--main-gap);
   inset-block-end: var(--main-gap);
 }
+
+
+/*контент секция*/
+
+.content {
+  background-color: var(--color-background);
+  display: grid;
+  gap: 50px;
+}
+
+.content__section {
+  font-size: var(--font-main-size);
+  list-style: normal;
+  line-height: 23.4px;
+
+  @media (width >= 768px) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+
+  @media (width >= 1024px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+
+}
+
+
+
+.content__section-title {
+  color: var(--color-accent-pink);
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: var(--font-main-size);
+}
+
+.text__blocks {
+  @media (width >= 1024px) {
+    grid-columns: span 2;
+
+  }
+
+}
+
+.text__block {
+  display: grid;
+}
+
+
+.text__block-title,
+.text__block-list-subtitle {
+  background-color: var(--color-accent-pink);
+  color: var(--color-background);
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: var(--font-main-size);
+}
+
+.text__block-title {
+  font-weight: 700;
+}
+
+.text__block-list-subtitle {
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+
+.text__block-content {
+  color: var(--color-text);
+}
+
+.causes {
+  .content__section-title {
+    grid-column: 1 / span 3;
+    max-width: 236px;
+  }
+
+  .text__blocks {
+    grid-column: 1 / span 3;
+  }
+}
+
 
 /* Начиная с 768 будут новые стили 
 @media (width >= 600px) {
@@ -138,6 +237,12 @@
       grid-row: 1 / 2;
       gap: 20px;
     }
+
+  .header__title {
+  font-size: var(--font-text-size);
+
+}
+
 }
 */
 
