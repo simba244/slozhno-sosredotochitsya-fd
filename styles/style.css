@@ -101,20 +101,14 @@
   pointer-events: none;
 }
 
-/* Стили для неактивного состояния (disabled) */
-.header__theme-menu-button:disabled {
-  opacity: 0.6;
-  cursor: default;
+.header__theme-menu-button:hover {
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
 }
 
 /* Стили для фокуса */
 .header__theme-menu-button:focus {
   outline: none;
-}
-
-.header__theme-menu-button:focus-visible {
-  outline: 1px solid currentColor;
-  outline-offset: 2px;
 }
 
 
@@ -147,22 +141,8 @@
     }
 }
 
-/* 
-.header__theme-menu-button {
-  background-color: transparent;
-  border: none;
-  padding: 5px 10px;
-  color: var(--color-accent-pink); 
-  cursor: pointer;
-  font-size: var(--font-main-size);
-  font-family: var(--font-family);
-} */
-
-
-
 .decorated-zone {
   position: relative;
-  
 }
 
 .decorated-zone::before {
@@ -218,8 +198,6 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     }
-
-
 }
 
 
@@ -294,8 +272,20 @@
 
 }
 
+.text-link-color {
+  text-shadow: 2px 2px 0 var(--color-accent-dark); 
+}
 
 
+.text-link-color:hover {
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+
+
+.text-link-color:focus {
+  outline: 1px solid #fff;
+}
 
 .gallery {
   display: grid;
