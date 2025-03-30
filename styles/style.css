@@ -85,14 +85,12 @@
 .header__theme-menu-button {
   padding: 1.5px 13px;
   border: 1px solid transparent;
-  background: transparent;
   cursor: pointer;
   color: var(--color-accent-dark);
   font-family: var(--font-family);
   font-size: 18px;
   text-transform: lowercase;
   background-color: transparent;
-  border: transparent; 
 }
 
 .header__theme-menu-button_active {
@@ -102,13 +100,13 @@
 }
 
 .header__theme-menu-button:hover {
-  border-bottom: 1px solid #fff;
+  border: 1px solid var(--color-accent-dark-opacity);
   cursor: pointer;
 }
 
 /* Стили для фокуса */
 .header__theme-menu-button:focus {
-  outline: none;
+  border-bottom: 1px solid var(--color-accent-dark);
 }
 
 
