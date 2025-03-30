@@ -34,7 +34,7 @@
 .header__logo::before {
   content: 'REC';
   font-size: var(--font-main-size);
-  color: var(--color-accent-dark);
+  color: var(--color-accent);
   line-height: 1.4;
 }
 
@@ -43,12 +43,12 @@
   display: block;
   width: 9px;
   height: 9px;
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-accent);
   border-radius: 50%;
   position: absolute;
   inset-block-start: 8px;
   inset-inline-end: -19px;
-  box-shadow: 0 0 4px 3px var(--color-accent-dark);
+  box-shadow: 0 0 4px 3px var(--color-accent);
 }
 
 /* Менюшка с кнопками тем */
@@ -59,12 +59,13 @@
   margin-top: calc(75px - var(--main-gap));
 
   @media (width >= 768px) {
-    margin-top: 192px;
+    margin-top: calc(192px - var(--main-gap));;
     }
   @media (width >= 1024px) {
   height: 100%;
   justify-content: center;
   align-items: start;
+  margin-top: calc(10px - var(--main-gap));
   }
 
 }
@@ -83,10 +84,10 @@
 
 /* Стили кнопки */
 .header__theme-menu-button {
-  padding: 1.5px 13px;
+  padding: 0 13px;
   border: 1px solid transparent;
   cursor: pointer;
-  color: var(--color-accent-dark);
+  color: var(--color-accent);
   font-family: var(--font-family);
   font-size: 18px;
   text-transform: lowercase;
@@ -95,18 +96,17 @@
 
 .header__theme-menu-button_active {
   border: var(--border); 
-  border-color: var(--color-accent-dark);
+  border-color: var(--color-accent);
   pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--color-accent-dark-opacity);
+  border: 1px solid var(--color-accent-opacity);
   cursor: pointer;
 }
 
-/* Стили для фокуса */
 .header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--color-accent-dark);
+  border-bottom: 1px solid var(--color-accent);
 }
 
 
@@ -115,10 +115,10 @@
   font-family: var(--font-family);
   font-size: var(--font-text-size-mobile);
   font-weight: bold;
-  color: var(--color-secondary-dark);
+  color: var(--color-secondary);
   margin-top: 65px;
   line-height: 83%;
-  text-shadow: 4px 4px 0 var(--color-accent-dark); 
+  text-shadow: 4px 4px 0 var(--color-accent); 
 }
 
 
@@ -127,7 +127,7 @@
   font-size: var(--font-main-size);
   font-family: var(--font-family)/* Подключенный шрифт */;
   color: var(--color-text); /* Цвет текста */
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-accent);
   margin-top: 55px;
   color: var(--color-background);
   font-weight: 700;
@@ -148,8 +148,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--color-accent-dark);
-  border-block-start: 1px solid var(--color-accent-dark);
+  border-inline-end: 1px solid var(--color-accent);
+  border-block-start: 1px solid var(--color-accent);
   inset-inline-end: var(--main-gap);
   inset-block-start: var(--main-gap);
 }
@@ -159,8 +159,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-start: 1px solid var(--color-accent-dark);
-  border-block-end: 1px solid var(--color-accent-dark);
+  border-inline-start: 1px solid var(--color-accent);
+  border-block-end: 1px solid var(--color-accent);
   inset-inline-start: var(--main-gap);
   inset-block-end: var(--main-gap);
 }
@@ -201,7 +201,7 @@
 
 
 .content__section-title {
-  color: var(--color-accent-dark);
+  color: var(--color-accent);
   margin-bottom: 20px;
   font-weight: 700;
   font-size: var(--font-main-size);
@@ -224,7 +224,7 @@
 
 .text__block-title,
 .text__block-list-subtitle {
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-accent);
   color: var(--color-background);
   margin-bottom: 10px;
   font-weight: 700;
@@ -236,8 +236,12 @@
 }
 
 .text__block-list-subtitle {
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: 400;
+}
+
+.text__block-list-subtitle:first-child {
+  margin-top: 10px;
 }
 
 
@@ -271,7 +275,7 @@
 }
 
 .text-link-color {
-  text-shadow: 2px 2px 0 var(--color-accent-dark); 
+  text-shadow: 2px 2px 0 var(--color-accent); 
 }
 
 
@@ -290,6 +294,14 @@
   gap: var(--main-gap);
 }
 
+.gallery__heading { 
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  font-weight: 700;
+  font-size: var(--font-main-size);
+  grid-column: 1/-1;
+}
+
 .gallery__image {
   inline-size: 100%;
 }
@@ -299,9 +311,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-.gallery-heading {
-    grid-column: 1/-1;
-}
 
 .gallery__image {
     block-size: 100%;
@@ -334,6 +343,8 @@
 
 .footer {
   display: grid;
+  position: relative;
+  justify-content: center;
   align-items: center;  
   height: 100vh; 
 }
@@ -343,6 +354,6 @@
   font-family: var(--font-family);
   font-size: var(--font-text-size-mobile);
   font-weight: bold;
-  color: var(--color-accent-dark);
+  color: var(--color-secondary);
   line-height: 83%;
 }
