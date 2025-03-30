@@ -10,6 +10,11 @@
 
 /* Mobile-first стили */
 .header {
+  background-image: url('../images/cover-image-dark.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -17,12 +22,26 @@
   align-items: start;  
   height: 100vh; 
   padding: var(--main-gap);
+
+  @media (width >= 768px) {
+    padding: 20px;
+    }
 }
 
 .header__logo {
   position: absolute;
   inset-inline-end: 38px;
   inset-block-start: 10px;
+
+  @media (width >= 768px) {
+    inset-inline-end: 48px;
+    inset-block-start: 30px;
+    }
+
+  @media (width >= 1024px) {
+    inset-inline-end: 48px;
+    inset-block-start: 20px;
+    }
 }
 
 .header__logo::before {
@@ -106,32 +125,51 @@
 
 .header__title {
   font-family: var(--font-family);
-  font-size: var(--font-text-size-mobile);
+  font-size: var(--font-title-size-mobile);
   font-weight: bold;
   color: var(--color-secondary);
   margin-top: 65px;
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--color-accent); 
+
+  @media (width >= 768px) {
+    font-size: var(--font-title-size);
+    margin-top: 25px;
+    margin-left: -20px;
+    }
+
+  
+  @media (width >= 1024px) {
+    margin-top: 0px;
+    }
 }
 
 
 .header__text {
   width: 100%;
   font-size: var(--font-main-size);
-  font-family: var(--font-family)/* Подключенный шрифт */;
-  color: var(--color-text); /* Цвет текста */
+  font-family: var(--font-family);
+  color: var(--color-text); 
   background-color: var(--color-accent);
   margin-top: 55px;
   color: var(--color-background);
   font-weight: 700;
   font-size: var(--font-main-size);
-  @media (width >= 1024px) {
+
+  @media (width >= 768px) {
     justify-self: end;
     align-self: center;
     width: 50%;
+    margin-top: 8px;
+    }
+
+  @media (width >= 1024px) {
+    margin-top: 0px;
     }
 }
 
+
+/* Квадратики */
 .decorated-zone {
   position: relative;
 }
@@ -145,6 +183,15 @@
   border-block-start: 1px solid var(--color-accent);
   inset-inline-end: var(--main-gap);
   inset-block-start: var(--main-gap);
+
+  @media (width >= 768px) {
+    inset-inline-end: 20px;
+    inset-block-start: 30px;
+    }
+
+  @media (width >= 1024px) {
+    inset-block-start: 20px;
+    }
 }
 
 .decorated-zone::after {
@@ -156,11 +203,19 @@
   border-block-end: 1px solid var(--color-accent);
   inset-inline-start: var(--main-gap);
   inset-block-end: var(--main-gap);
+
+  @media (width >= 768px) {
+    inset-inline-start: 20px;
+    inset-block-end: 30px;
+    }
+
+  @media (width >= 1024px) {
+    inset-block-end: 20px;
+      }
 }
 
 
-/*контент секция*/
-
+/*Секция с текстами*/
 .content {
   background-color: var(--color-background);
   display: grid;
@@ -168,9 +223,16 @@
   padding: 10px;
 
   @media (width >= 768px) {
+    margin-top: 50px;
     padding: 20px;
+    gap: 80px;
     }
 
+  @media (width >= 1024px) {
+    margin-top: 40px;
+    padding: 20px;
+    gap: 80px;
+    }
 }
 
 .content__section {
@@ -218,7 +280,7 @@
 .text__block-title,
 .text__block-list-subtitle {
   background-color: var(--color-accent);
-  color: var(--color-background);
+  color: var(--color-subtitle);
   margin-bottom: 10px;
   font-weight: 700;
   font-size: var(--font-main-size);
@@ -285,11 +347,14 @@
 .gallery {
   display: grid;
   gap: var(--main-gap);
+  @media (width >= 768px) {
+    gap: 20px;
+    }
 }
 
 .gallery__heading { 
   background-color: var(--color-accent);
-  color: var(--color-background);
+  color: var(--color-subtitle);
   font-weight: 700;
   font-size: var(--font-main-size);
   grid-column: 1/-1;
@@ -340,13 +405,24 @@
   justify-content: center;
   align-items: center;  
   height: 100vh; 
+  @media (width >= 768px) {
+    margin-top: 60px;
+    }
+
+  @media (width >= 1024px) {
+    margin-top: 0;
+    }
 }
 
 
 .footer__title {
   font-family: var(--font-family);
-  font-size: var(--font-text-size-mobile);
+  font-size: var(--font-title-size-mobile);
   font-weight: bold;
   color: var(--color-secondary);
   line-height: 83%;
+  
+  @media (width >= 768px) {
+    font-size: var(--font-title-size);
+    }
 }
