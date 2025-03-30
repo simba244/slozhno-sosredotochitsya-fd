@@ -333,10 +333,7 @@
 
 
 .footer {
-  position: relative;
   display: grid;
-  grid-template-rows: 1fr min-content 1fr;
-  justify-items: start;
   align-items: center;  
   height: 100vh; 
 }
@@ -346,7 +343,6 @@
   font-family: var(--font-family);
   font-size: var(--font-text-size-mobile);
   font-weight: bold;
-  color: var(--color-accent-pink);
-  margin: 0;
+  color: var(--color-accent-dark);
   line-height: 83%;
 }
