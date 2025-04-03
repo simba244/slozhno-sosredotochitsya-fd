@@ -5,26 +5,29 @@
   background-color: var(--color-background); 
   margin: 0;
   font-family: var(--font-family);
-}
-
-
-/* Mobile-first стили */
-.header {
   background-image: url('../images/cover-image-dark.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
+  margin: 0 auto;
+}
+
+
+/* Mobile-first стили */
+.header {
+
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   justify-items: start;
   align-items: start;  
   height: 100vh; 
   padding: var(--main-gap);
+  min-height: 668px;
 
   @media (width >= 768px) {
-    padding: 20px;
+    padding: 10px;
     }
 }
 
