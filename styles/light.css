@@ -18,15 +18,27 @@
   --bg-image: url(../images/cover-image-light.png);
   --border:1px var(--color-accent) solid; 
 
-  
-}
-
-.theme-light .header {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-  background-image: url(../images/cover-image-light.png);
 }
 
 .theme-light .header__logo {
   display: none;
+}
+
+@media (preference-color-scheme: light) {
+  :root {
+    --color-accent: #FF8DCB;
+    --color-secondary: #FFC2E6;
+    --color-text: #353430;
+    --color-subtitle: #353430;
+    --color-background: #FFF1F7;
+    --color-accent-opacity: #FF007066;
+    --bg-image: url(../images/cover-image-light.png);
+    --border:1px var(--color-accent) solid; 
+  }
+
+  .header__logo {
+    display: none;
+  }
+
 }
 

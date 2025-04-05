@@ -5,7 +5,7 @@
   background-color: var(--color-background); 
   margin: 0;
   font-family: var(--font-family);
-  background-image: url('../images/cover-image-dark.png');
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -131,7 +131,6 @@
   font-size: var(--font-title-size-mobile);
   font-weight: bold;
   color: var(--color-secondary);
-  margin-top: 65px;
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--color-accent); 
 
@@ -222,6 +221,7 @@
 .content {
   background-color: var(--color-background);
   display: grid;
+  margin-top: 30px;
   gap: 50px;
   padding: 10px;
 
@@ -256,8 +256,6 @@
     }
 }
 
-
-
 .content__section-title {
   color: var(--color-accent);
   margin-bottom: 20px;
@@ -276,16 +274,18 @@
 .text__block {
   display: grid;
   align-items: start;
-
 }
 
+/* Добавил гап для карточек, чтобы не было слипания текста и заголовка */
+.text__block-list {
+  gap: 10px;
+}
 
 .text__block-title,
 .text__block-list-subtitle {
   background-color: var(--color-accent);
   color: var(--color-subtitle);
   margin-bottom: 10px;
-  font-weight: 700;
   font-size: var(--font-main-size);
 }
 
@@ -329,7 +329,6 @@
 
   }
 
-
 }
 
 .text-link-color {
@@ -338,14 +337,17 @@
 
 
 .text-link-color:hover {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--color-accent-opacity);
   cursor: pointer;
 }
 
 
 .text-link-color:focus {
-  outline: 1px solid #fff;
+  outline: none;
+  border-bottom: 1px solid var(--border);
 }
+
+
 
 .gallery {
   display: grid;
@@ -401,13 +403,15 @@
 }
 
 
-
 .footer {
   display: grid;
   position: relative;
   justify-content: center;
   align-items: center;  
   height: 100vh; 
+  min-height: 668px;
+  margin-top: 30px;
+
   @media (width >= 768px) {
     margin-top: 60px;
     }
@@ -424,6 +428,7 @@
   font-weight: bold;
   color: var(--color-secondary);
   line-height: 83%;
+  text-shadow: 4px 4px 0 var(--color-accent); 
   
   @media (width >= 768px) {
     font-size: var(--font-title-size);
