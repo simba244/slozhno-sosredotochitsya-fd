@@ -17,7 +17,6 @@
 
 /* Mobile-first стили */
 .header {
-
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   justify-items: start;
@@ -27,7 +26,7 @@
   min-height: 668px;
 
   @media (width >= 768px) {
-    padding: 10px;
+    padding: 20px;
     }
 }
 
@@ -38,7 +37,7 @@
 
   @media (width >= 768px) {
     inset-inline-end: 48px;
-    inset-block-start: 30px;
+    inset-block-start: 20px;
     }
 
   @media (width >= 1024px) {
@@ -74,7 +73,7 @@
   justify-content: end;
   margin-top: calc(75px - var(--main-gap));
   @media (width >= 768px) {
-    margin-top: calc(192px - var(--main-gap));;
+    margin-top: calc(182px - var(--main-gap));
     }
   @media (width >= 1024px) {
   height: 100%;
@@ -136,7 +135,7 @@
 
   @media (width >= 768px) {
     font-size: var(--font-title-size);
-    margin-top: 25px;
+    margin-top: 5px;
     margin-left: -20px;
     }
 
@@ -162,7 +161,7 @@
     justify-self: end;
     align-self: center;
     width: 50%;
-    margin-top: 8px;
+    margin-top: 4px;
     }
 
   @media (width >= 1024px) {
@@ -188,7 +187,7 @@
 
   @media (width >= 768px) {
     inset-inline-end: 20px;
-    inset-block-start: 30px;
+    inset-block-start: 20px;
     }
 
   @media (width >= 1024px) {
@@ -208,7 +207,7 @@
 
   @media (width >= 768px) {
     inset-inline-start: 20px;
-    inset-block-end: 30px;
+    inset-block-end: 20px;
     }
 
   @media (width >= 1024px) {
@@ -226,7 +225,7 @@
   padding: 10px;
 
   @media (width >= 768px) {
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 20px;
     gap: 80px;
     }
@@ -413,11 +412,7 @@
   margin-top: 30px;
 
   @media (width >= 768px) {
-    margin-top: 60px;
-    }
-
-  @media (width >= 1024px) {
-    margin-top: 0;
+    margin-top: 40px;
     }
 }
 
