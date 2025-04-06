@@ -6,10 +6,12 @@
 
 :root.theme-dark {
   --color-accent: #FF0070;
+  --accent-text-color:#FF0070;
   --color-secondary: #DB00FF;
   --color-text: #F1B2CE;
   --color-subtitle: #000028;
   --color-background: #000028;
+  --color-accent-btn: #FF0070;
   --color-accent-opacity: #FF007066;
   --bg-image: url(../images/cover-image-dark.png);
   --border: 1px var(--color-accent) solid;

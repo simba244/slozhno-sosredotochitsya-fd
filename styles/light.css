@@ -10,27 +10,31 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --color-accent: #FF8DCB;
+  --accent-text-color:#353430;
   --color-secondary: #FFC2E6;
   --color-text: #353430;
   --color-subtitle: #353430;
   --color-background: #FFF1F7;
-  --color-accent-opacity: #FF007066;
+  --color-accent-btn: #353430;
+  --color-accent-opacity: #32312D66;
   --bg-image: url(../images/cover-image-light.png);
   --border:1px var(--color-accent) solid; 
-
 }
 
 .theme-light .header__logo {
   display: none;
 }
 
-@media (preference-color-scheme: light) {
+/*Автосветлую тему починил, да была ошибка в prefers*/
+@media (prefers-color-scheme: light) {
   :root {
     --color-accent: #FF8DCB;
+    --accent-text-color:#353430; /*Добавил для светлой темы*/
     --color-secondary: #FFC2E6;
     --color-text: #353430;
     --color-subtitle: #353430;
     --color-background: #FFF1F7;
+    --color-accent-btn: #FF0070;
     --color-accent-opacity: #FF007066;
     --bg-image: url(../images/cover-image-light.png);
     --border:1px var(--color-accent) solid; 

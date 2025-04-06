@@ -1,7 +1,15 @@
-/* 
-Никита, привет👋
-Спасибо за рефью и полезные ссылки⚡.
+/* Никита, спасибо за 2-е рефью ⚡
+Исправляюсь...
+- Добавил отступы для параграфа внутри карточки для изменения контента (307 стр)
+- Сделал выравнивание внутри карточки (305 стр)
+- Включил автотему (29 стр в light)
+- Поправил стили для светлой темы (13,18,19 стр в light)
+- Поправил состояния для кнопок на всех темах (143, 380,381 383-385)
+- Поправил состояния для ссылок тоже на всех темах
 
+
+
+1-е ревью
 Поправил замечания🫡:
 1.Проверил пиксель перфект и все поправил
 2.Добавил gap 10 для карточек text__block-list, чтобы не было слипания текста и заголовка
@@ -121,16 +129,18 @@
   padding: 0 13px;
   border: 1px solid transparent;
   cursor: pointer;
-  color: var(--color-accent);
+  color: var(--color-accent-btn);
   font-family: var(--font-family);
   font-size: 18px;
+  font-weight: 400;
   text-transform: lowercase;
   background-color: transparent;
 }
 
+/* Поправил фокусы и их состояния*/
 .header__theme-menu-button_active {
   border: var(--border); 
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-btn);
   pointer-events: none;
 }
 
@@ -139,8 +149,9 @@
   cursor: pointer;
 }
 
-.header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--color-accent);
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--color-accent-btn);
 }
 
 
@@ -236,7 +247,6 @@
 }
 
 
-/*Секция с текстами*/
 .content {
   background-color: var(--color-background);
   display: grid;
@@ -276,7 +286,7 @@
 }
 
 .content__section-title {
-  color: var(--color-accent);
+  color: var(--accent-text-color);
   margin-bottom: 20px;
   font-weight: 700;
   font-size: var(--font-main-size);
@@ -291,8 +301,11 @@
 }
 
 .text__block {
-  display: grid;
+  display: grid; 
+  grid-template-rows: auto 1fr; /*Выровнял карточку по верхнему краю — этого свойства не было, потому и не работало*/
   align-items: start;
+  gap: 10px; /* Добавил отступ для абзацев чтобы не ломалась верстка */
+  margin: 0;
 }
 
 /* Добавил гап для карточек, чтобы не было слипания текста и заголовка */
@@ -304,15 +317,17 @@
 .text__block-list-subtitle {
   background-color: var(--color-accent);
   color: var(--color-subtitle);
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; этот отспуп перенес в .text__block-list-subtitle*/
   font-size: var(--font-main-size);
 }
 
 .text__block-title {
   font-weight: 700;
+  
 }
 
 .text__block-list-subtitle {
+  margin-bottom: 10px; 
   margin-top: 20px;
   font-weight: 400;
 }
@@ -350,7 +365,9 @@
 
 }
 
+
 .text-link-color {
+  text-decoration: none;
   text-shadow: 2px 2px 0 var(--color-accent); 
 }
 
@@ -360,10 +377,12 @@
   cursor: pointer;
 }
 
-
-.text-link-color:focus {
+/*Сделал focus-visible */
+.text-link-color:focus-visible {
   outline: none;
-  border-bottom: 1px solid var(--border);
+  border: var(--border); 
+  border-color: var(--color-accent-btn);
+  pointer-events: none;
 }
 
 
