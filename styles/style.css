@@ -337,6 +337,12 @@
 }
 
 
+
+.text__block-section {
+  display: grid;
+  gap: 10px;
+}
+
 .text__block-content {
   color: var(--color-text);
 }
