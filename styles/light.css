@@ -19,7 +19,7 @@
   --color-accent-opacity: #32312D66;
   --color-link-hover: #353430; 
   --bg-image: url(../images/cover-image-light.png);
-  --border:1px var(--color-accent) solid; 
+  --border:1px var(--color-accent-btn) solid; 
 }
 
 .theme-light .header__logo {
@@ -39,7 +39,7 @@
     --color-accent-opacity: #32312D66;
     --color-link-hover: #353430; 
     --bg-image: url(../images/cover-image-light.png);
-    --border:1px var(--color-accent) solid; 
+    --border:1px var(--color-accent-btn) solid; 
   }
 
   .header__logo {
